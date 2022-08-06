@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【Vue】基础总结(持续更新) | Kinsey&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <meta name="description" content="你我山巅自相逢，人去归来烟雨中。">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.bc16285c.css" as="style"><link rel="preload" href="/assets/js/app.a74b912a.js" as="script"><link rel="preload" href="/assets/js/3.ae9fb131.js" as="script"><link rel="preload" href="/assets/js/1.66efc5fd.js" as="script"><link rel="preload" href="/assets/js/23.995b2e4f.js" as="script"><link rel="preload" href="/assets/js/9.82d2931b.js" as="script"><link rel="prefetch" href="/assets/js/10.4eb33233.js"><link rel="prefetch" href="/assets/js/11.9b72f507.js"><link rel="prefetch" href="/assets/js/12.618ff3d9.js"><link rel="prefetch" href="/assets/js/13.93573bfe.js"><link rel="prefetch" href="/assets/js/14.624992d0.js"><link rel="prefetch" href="/assets/js/15.0b1de5c4.js"><link rel="prefetch" href="/assets/js/16.92a32d9f.js"><link rel="prefetch" href="/assets/js/17.acf4f275.js"><link rel="prefetch" href="/assets/js/18.2b876e8d.js"><link rel="prefetch" href="/assets/js/19.09990ed5.js"><link rel="prefetch" href="/assets/js/20.f1cdaf20.js"><link rel="prefetch" href="/assets/js/21.c90276d9.js"><link rel="prefetch" href="/assets/js/22.55d95159.js"><link rel="prefetch" href="/assets/js/24.f540ab2c.js"><link rel="prefetch" href="/assets/js/25.14daf54a.js"><link rel="prefetch" href="/assets/js/26.d8b54a37.js"><link rel="prefetch" href="/assets/js/27.2e17fde9.js"><link rel="prefetch" href="/assets/js/28.0975ddd2.js"><link rel="prefetch" href="/assets/js/29.c228b119.js"><link rel="prefetch" href="/assets/js/30.373e7f8f.js"><link rel="prefetch" href="/assets/js/31.43f9423e.js"><link rel="prefetch" href="/assets/js/32.2b43a160.js"><link rel="prefetch" href="/assets/js/33.0e2a4165.js"><link rel="prefetch" href="/assets/js/34.490c7eb0.js"><link rel="prefetch" href="/assets/js/4.ff175b66.js"><link rel="prefetch" href="/assets/js/5.8b13e0eb.js"><link rel="prefetch" href="/assets/js/6.0ab7c6d6.js"><link rel="prefetch" href="/assets/js/7.20122e24.js"><link rel="prefetch" href="/assets/js/8.ed730b48.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bc16285c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Kinsey's Blog</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>你我山巅自相逢，人去归来烟雨中。</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>谦逊</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Kinsey's Blog" class="logo"> <span class="site-name">Kinsey's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/中等算法/" class="nav-link"><i class="undefined"></i>
+  中等算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jQuery/" class="nav-link"><i class="undefined"></i>
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/手写/" class="nav-link"><i class="undefined"></i>
+  手写
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><img src="/person.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    谦逊
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>22</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>12</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/中等算法/" class="nav-link"><i class="undefined"></i>
+  中等算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jQuery/" class="nav-link"><i class="undefined"></i>
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/手写/" class="nav-link"><i class="undefined"></i>
+  手写
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>【Vue】基础总结(持续更新)</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>谦逊</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">【Vue】基础总结(持续更新)</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>谦逊</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>5/10/2022</span></i> <i class="iconfont reco-eye" data-v-f875f3fc><span id="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-f875f3fc><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>Vue基础</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="vue总结"><a href="#vue总结" class="header-anchor">#</a> Vue总结</h1> <h2 id="vue-devtools插件"><a href="#vue-devtools插件" class="header-anchor">#</a> Vue-DevTools插件</h2> <p>拓展功能,让浏览器可以运行Vue</p> <h2 id="模板语法"><a href="#模板语法" class="header-anchor">#</a> 模板语法</h2> <div class="language- extra-class"><pre><code>- 1.插值语法: {{}} 
+    xxx是js表达式
+    绑定data中的数据,也可以调用函数、携带参数
+- 2.指令语法
+    v-xx:
+    v-bind  单向数据绑定
+    v-model 双向数据绑定 =&gt; 就是取input的value值
+    ...
+</code></pre></div><h2 id="数据绑定"><a href="#数据绑定" class="header-anchor">#</a> 数据绑定</h2> <div class="language- extra-class"><pre><code>- 1.单向数据绑定
+    数据只能通过data改变页面
+- 2.双向数据绑定
+    data与页面数据互相改变
+</code></pre></div><h2 id="el与data的写法"><a href="#el与data的写法" class="header-anchor">#</a> el与data的写法</h2> <div class="language- extra-class"><pre><code>- 1.el两种写法:
+    - 1.1 new Vue时 =&gt; el:''
+    - 1.2 挂载时 =&gt; $mount('#xx')
+- 2.data两种写法:
+    - 2.1 对象式
+        data:{
+
+        }
+    - 2.2 函数式  =&gt; 组件写法
+        data() {
+            return {
+                
+            }
+        },
+</code></pre></div><p>注意:Vue所管理的函数要写成普通函数,不是Vue所管理的函数要写成箭头函数</p> <h2 id="mvvm模型"><a href="#mvvm模型" class="header-anchor">#</a> MVVM模型</h2> <div class="language- extra-class"><pre><code>- Vue框架的作用就是将数据通过new Vue实例反应到View界面
+</code></pre></div><h2 id="数据代理"><a href="#数据代理" class="header-anchor">#</a> 数据代理</h2> <div class="language- extra-class"><pre><code>- 原理: Object.defineProperty(目标对象,'属性或方法'),{
+        - value: 值,
+        - writable: 能否修改值,
+        - enumerable: 能否被遍历,
+        - configurable: 能否被delete
+}
+- 重点:
+    - getter、setter函数通过目标对象监听另一个对象的值是否改变
+- Vue中的数据代理:
+    - 通过new Vue实例来代理data对象中的属性的操作(读/写)
+- 基本原理:
+    - Vue为每个添加到Vue实例上的属性,绑定一个getter、setter函数进行读写操作
+- 注意: data是由$options包裹
+</code></pre></div><h2 id="事件处理"><a href="#事件处理" class="header-anchor">#</a> 事件处理</h2> <div class="language- extra-class"><pre><code>- v-on:xxx或@xxx绑定事件,可以传参
+- 事件修饰符:
+    - .stop    阻止冒泡,默认冒泡 (常用)
+    - .prevent 阻止默认行为      (常用)
+    - .once    事件只触发一次    (常用)
+    - .capture 使用事件捕获,默认不捕获
+    - .self    event.target是当前操作元素才触发
+    - .passive 立即执行事件默认行为 
+    - .native  原生js事件
+- 常见键盘事件
+    - enter 
+    - delete
+    - esc
+    - space
+    - tab
+    - up
+    - down
+    - left
+    - right
+    - eg: @click.enter='XXX'
+</code></pre></div><h2 id="computed计算属性"><a href="#computed计算属性" class="header-anchor">#</a> Computed计算属性</h2> <div class="language- extra-class"><pre><code>- get和set函数 =&gt; 一般只用简写形式set函数
+- get函数调用时机:
+- 2.1 第一次模板解析时
+- 2.2 当所需的值变化时,重新计算
+- 必须要有返回值
+</code></pre></div><p>注意:Computed的函数调用时机 =&gt; 导致不能使用定时器函数,因为所需值没有变化</p> <h2 id="watch监视属性"><a href="#watch监视属性" class="header-anchor">#</a> watch监视属性</h2> <div class="language- extra-class"><pre><code>- 使用注意:
+    - 属性存在时生效
+    - 当监视的属性变化时,调用该函数
+- API
+    - deep:true =&gt; 深度监视 =&gt; 适用于监视目标为对象时
+    - immediate:true =&gt; 模板解析时调用一次该函数
+    - handler(newvalue,oldvalue) =&gt; 一般使用简写形式
+- 简写形式:
+    -  xxx(newvalue,oldvalue){
+        console.log('isHot监视中 =&gt; ', newValue, oldValue);
+    }
+- 使用方式:
+    - 1) new Vue实例时
+    - 2) 创建Vue实例后,通过$watch('xxx',{})挂载
+</code></pre></div><h2 id="绑定样式"><a href="#绑定样式" class="header-anchor">#</a> 绑定样式</h2> <div class="language- extra-class"><pre><code>- 绑定class样式
+    - 1. 字符串写法 =&gt; 适用于类名不确定,需要动态指定(通过随机数)
+    - 2. 数组写法 =&gt; 适用于绑定样式数量不确定、名字也不确定 
+    - 3. 对象写法 =&gt; 适用于样式数量确定、名字也确定,但需要动态指定样式
+- 绑定style样式
+    - 1. :style=&quot;{fontSize:xxx}&quot; 其中xxx是动态值
+    - 2. :style=&quot;[a,b]&quot;,其中a,b是对象形式
+</code></pre></div><h2 id="条件渲染"><a href="#条件渲染" class="header-anchor">#</a> 条件渲染</h2> <div class="language- extra-class"><pre><code>- v-show
+    - display:none实现,结构还在
+    - 适用于切换频率较高的场景
+- v-if
+    - 会破坏原有结构
+    - 适用于切换频率较低的场景
+- v-else-if
+    - 除去v-if之后的依次判断
+- v-else
+    - 除去之前所有的判断
+</code></pre></div><p>注意:v-if可能会获取不到样式 =&gt; 因为结构会消失找不到该元素</p> <h2 id="列表渲染"><a href="#列表渲染" class="header-anchor">#</a> 列表渲染</h2> <div class="language- extra-class"><pre><code>- v-for
+    - 写法:
+        - v-for:&quot;ele in xxx&quot; 
+    - 场景
+        - 遍历数组
+            - v-for=&quot;ele in Array&quot;
+        - 遍历对象
+            - v-for=&quot;ele in Object&quot;
+        - 遍历字符串(少用)
+            - v-for=&quot;ele in String&quot;
+    - 使用注意
+        - v-for(value,key) in Object =&gt; value在前,key在后
+- key的作用
+    - key给每个列表添加一个唯一标识,方便Diff算法识别
+    - Diff算法简易过程
+        - 判断key值 =&gt; 判断元素 =&gt; 判断value值 ...
+        - 生成虚拟DOM / 复用虚拟DOM
+- 列表过滤
+    - 使用computed计算属性最好 =&gt; 记住必须要有返回值
+    - 搭配filter / forEach / indexOf 使用
+- 列表排序
+    - 通过一个flag值,选择排序方式
+    - 最后进入函数判断
+    - 搭配三元运算符 / sort 使用
+</code></pre></div><p>注意:使用v-for时,必须添加上:key值 =&gt; 通常使用nanoid / uuid(nanoid的缩小版)</p> <h2 id="数据更新-插入问题"><a href="#数据更新-插入问题" class="header-anchor">#</a> 数据更新 / 插入问题</h2> <div class="language- extra-class"><pre><code>- 使用前提必须是响应式数据
+- Vue.set() / vm.$set() / this.$set() 可以直接给data中的数据添加
+- 1.1 数组 =&gt; 使用不破坏原数组的方法pop、push、shift、unshift等 
+=&gt; 原因:Vue将Array上的方法放在了Vue实例上
+- 1.2 对象 =&gt; 直接使用Vue.set(target,key,value)注意不要给data根对象添加属性
+</code></pre></div><h2 id="收集表单数据"><a href="#收集表单数据" class="header-anchor">#</a> 收集表单数据</h2> <div class="language- extra-class"><pre><code>- 通过双向绑定数据进行存储
+- 获取数据后需要转换为JSON格式
+</code></pre></div><h2 id="过滤器"><a href="#过滤器" class="header-anchor">#</a> 过滤器</h2> <div class="language- extra-class"><pre><code>- 使用
+    - xxx | xxx
+- 只能在Vue2中使用
+- 常用于文本格式化
+- 定义方法:
+    - 局部 
+        - filters:{
+            xxx(){
+                return xxx
+            }
+        }
+    - 全局
+        - Vue.filter('xxx',function(){
+            return xxx
+        })
+</code></pre></div><h2 id="内置指令"><a href="#内置指令" class="header-anchor">#</a> 内置指令</h2> <div class="language- extra-class"><pre><code>- v-text  获取文本
+- v-html  不推荐使用 =&gt; 会影响xss攻击
+- v-cloak 配合css解决出现{{}}的问题
+- v-once  只渲染一次,优化性能
+- v-pre   不需要经过Vue模板解析
+</code></pre></div><h2 id="自定义指令"><a href="#自定义指令" class="header-anchor">#</a> 自定义指令</h2> <div class="language- extra-class"><pre><code>- 局部
+    - new Vue({
+        directives:{
+           xxx:{
+
+           } 
+        }
+    })
+    或
+    - new Vue({
+        directives(){
+
+        }
+    })
+- 全局指令:
+    - Vue.directive(指令名,配置对象)或 Vue.directive(指令名,回调函数)
+- 配置对象中的三个回调函数  
+    - bind      绑定时
+    - inserted  插入页面时
+    - update    重新解析时</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#vue-devtools插件" class="sidebar-link reco-side-vue-devtools插件" data-v-cb1513f6>Vue-DevTools插件</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#模板语法" class="sidebar-link reco-side-模板语法" data-v-cb1513f6>模板语法</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#数据绑定" class="sidebar-link reco-side-数据绑定" data-v-cb1513f6>数据绑定</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#el与data的写法" class="sidebar-link reco-side-el与data的写法" data-v-cb1513f6>el与data的写法</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#mvvm模型" class="sidebar-link reco-side-mvvm模型" data-v-cb1513f6>MVVM模型</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#数据代理" class="sidebar-link reco-side-数据代理" data-v-cb1513f6>数据代理</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#事件处理" class="sidebar-link reco-side-事件处理" data-v-cb1513f6>事件处理</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#computed计算属性" class="sidebar-link reco-side-computed计算属性" data-v-cb1513f6>Computed计算属性</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#watch监视属性" class="sidebar-link reco-side-watch监视属性" data-v-cb1513f6>watch监视属性</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#绑定样式" class="sidebar-link reco-side-绑定样式" data-v-cb1513f6>绑定样式</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#条件渲染" class="sidebar-link reco-side-条件渲染" data-v-cb1513f6>条件渲染</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#列表渲染" class="sidebar-link reco-side-列表渲染" data-v-cb1513f6>列表渲染</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#数据更新-插入问题" class="sidebar-link reco-side-数据更新-插入问题" data-v-cb1513f6>数据更新 / 插入问题</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#收集表单数据" class="sidebar-link reco-side-收集表单数据" data-v-cb1513f6>收集表单数据</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#过滤器" class="sidebar-link reco-side-过滤器" data-v-cb1513f6>过滤器</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#内置指令" class="sidebar-link reco-side-内置指令" data-v-cb1513f6>内置指令</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/Vue%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91.html#自定义指令" class="sidebar-link reco-side-自定义指令" data-v-cb1513f6>自定义指令</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.a74b912a.js" defer></script><script src="/assets/js/3.ae9fb131.js" defer></script><script src="/assets/js/1.66efc5fd.js" defer></script><script src="/assets/js/23.995b2e4f.js" defer></script><script src="/assets/js/9.82d2931b.js" defer></script>
+  </body>
+</html>

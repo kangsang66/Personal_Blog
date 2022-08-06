@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【ES6-11】总结 | Kinsey&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <meta name="description" content="你我山巅自相逢，人去归来烟雨中。">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.bc16285c.css" as="style"><link rel="preload" href="/assets/js/app.a74b912a.js" as="script"><link rel="preload" href="/assets/js/3.ae9fb131.js" as="script"><link rel="preload" href="/assets/js/1.66efc5fd.js" as="script"><link rel="preload" href="/assets/js/15.0b1de5c4.js" as="script"><link rel="preload" href="/assets/js/9.82d2931b.js" as="script"><link rel="prefetch" href="/assets/js/10.4eb33233.js"><link rel="prefetch" href="/assets/js/11.9b72f507.js"><link rel="prefetch" href="/assets/js/12.618ff3d9.js"><link rel="prefetch" href="/assets/js/13.93573bfe.js"><link rel="prefetch" href="/assets/js/14.624992d0.js"><link rel="prefetch" href="/assets/js/16.92a32d9f.js"><link rel="prefetch" href="/assets/js/17.acf4f275.js"><link rel="prefetch" href="/assets/js/18.2b876e8d.js"><link rel="prefetch" href="/assets/js/19.09990ed5.js"><link rel="prefetch" href="/assets/js/20.f1cdaf20.js"><link rel="prefetch" href="/assets/js/21.c90276d9.js"><link rel="prefetch" href="/assets/js/22.55d95159.js"><link rel="prefetch" href="/assets/js/23.995b2e4f.js"><link rel="prefetch" href="/assets/js/24.f540ab2c.js"><link rel="prefetch" href="/assets/js/25.14daf54a.js"><link rel="prefetch" href="/assets/js/26.d8b54a37.js"><link rel="prefetch" href="/assets/js/27.2e17fde9.js"><link rel="prefetch" href="/assets/js/28.0975ddd2.js"><link rel="prefetch" href="/assets/js/29.c228b119.js"><link rel="prefetch" href="/assets/js/30.373e7f8f.js"><link rel="prefetch" href="/assets/js/31.43f9423e.js"><link rel="prefetch" href="/assets/js/32.2b43a160.js"><link rel="prefetch" href="/assets/js/33.0e2a4165.js"><link rel="prefetch" href="/assets/js/34.490c7eb0.js"><link rel="prefetch" href="/assets/js/4.ff175b66.js"><link rel="prefetch" href="/assets/js/5.8b13e0eb.js"><link rel="prefetch" href="/assets/js/6.0ab7c6d6.js"><link rel="prefetch" href="/assets/js/7.20122e24.js"><link rel="prefetch" href="/assets/js/8.ed730b48.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bc16285c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Kinsey's Blog</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>你我山巅自相逢，人去归来烟雨中。</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>谦逊</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Kinsey's Blog" class="logo"> <span class="site-name">Kinsey's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/中等算法/" class="nav-link"><i class="undefined"></i>
+  中等算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jQuery/" class="nav-link"><i class="undefined"></i>
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/手写/" class="nav-link"><i class="undefined"></i>
+  手写
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><img src="/person.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    谦逊
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>22</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>12</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/中等算法/" class="nav-link"><i class="undefined"></i>
+  中等算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jQuery/" class="nav-link"><i class="undefined"></i>
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/手写/" class="nav-link"><i class="undefined"></i>
+  手写
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>【ES6-11】总结</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>谦逊</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">【ES6-11】总结</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>谦逊</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>5/7/2022</span></i> <i class="iconfont reco-eye" data-v-f875f3fc><span id="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-f875f3fc><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>ES6-11</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="_1-let和const"><a href="#_1-let和const" class="header-anchor">#</a> 1.let和const</h2> <div class="language- extra-class"><pre><code>const 命令
+- 声明一个不可改变的常量  =&gt; 不会改变内存地址指向的数据
+- 必须赋值
+- 与let类似,在其块级作用域生效
+- 不会变量提升 =&gt; 存在'暂时性死区'
+</code></pre></div><h2 id="_2-es6声明变量的六种方法"><a href="#_2-es6声明变量的六种方法" class="header-anchor">#</a> 2.ES6声明变量的六种方法</h2> <div class="language- extra-class"><pre><code>- let
+- var 
+- const 
+- function
+- import
+- class
+
+顶层对象的属性 =&gt; javascript败笔之一
+- 理解: 不会在编译时就会检测出变量声明错误的问题
+- 原因: window对象的产生是动态的的可能会出现变量同名问题
+- 总结: 当打开浏览器时才会检测变量声明的问题 
+=&gt; 执行两步: 
+        - (1) 查看Node的global对象
+        - (2) 查看浏览器的window对象
+</code></pre></div><h2 id="_3-变量的解构赋值"><a href="#_3-变量的解构赋值" class="header-anchor">#</a> 3.变量的解构赋值</h2> <div class="language- extra-class"><pre><code>- let [a,b,c] = [1,2,3];
+- let [foo,[[bar],baz]] = [1,[[2],3]]
+- let [x, ,y] = [1,2,3]; // x = 1,y = 3
+- let [x,y,z] = [1,2];  // z undefined 只声明未赋值
+
+允许指定默认值
+- let [foo = 'true'] = []; // foo = 'true'
+- let [x='a',y] = ['b']; // x='b',y undefined x值会被覆盖
+- let [x = y, y = 1] = []; //报错
+
+对象的解构赋值 =&gt; 会将对象的属性和值一一对应,没有依次顺序
+- let {foo} = {bar :'aaa'} // foo undefined
+- let {foo , bar} = {bar :'aaa',foo :'bbb'}  // foo :'bbb' , bar :'aaa';
+- const {log} = console // 将console的属性和方法中的log取出赋值给log
+  log('123')
+- 对象解构赋值案例
+const node = {loc: {start: {line: 1,column: 5}}};
+let { loc, loc: { start }, loc: { start: { line } } } = node;
+
+line // 1
+loc  // Object {start: Object}
+start // Object {line: 1, column: 5}
+
+用途:
+(1).交换变量的值:
+    - let x = 1;
+    - let y = 2;
+    - [x,y] = [y,x]
+(2).从函数返回多个值:
+    - function example(){
+        return [1,2,3];
+    }
+    - let [a,b,c] = example();
+    - function example(){
+        return {
+            foo:1,
+            bar:2
+        };
+    }
+    - let {foo,bar} = example();
+(3).函数参数的定义:
+    - function f({x,y,z}){};
+    - f({x:2,y:1,z:3});
+(4).提取JSON数据:
+    - let JSON = {
+        name:'康振',
+        age:20,
+        sex:'男'；
+    }
+    - let {name,age,sex} = JSON;
+    - name = '康振',age = 20,sex = '男'
+(5).遍历map结构  =&gt; set方法可以自动删除重复的数值
+    - const map = new Map();
+    - map.set('first','hello');
+    - map.set('second','world');
+    - for(let [key,value] of map){
+        const { log } = console;
+        log(key + 'is' + value)
+    }
+</code></pre></div><h2 id="_4-字符串的拓展"><a href="#_4-字符串的拓展" class="header-anchor">#</a> 4.字符串的拓展</h2> <div class="language- extra-class"><pre><code>- 遍历字符串
+for(let codePoint of 'foo'){
+    console.log(codePoint);
+}
+- 模板字符串
+直接使用`` 反引号 加上${内容}
+    - let name = 'Bob';
+      let age  = 20;
+      `${name} is ${age}` 
+</code></pre></div><h2 id="_5-字符串的新增方法"><a href="#_5-字符串的新增方法" class="header-anchor">#</a> 5.字符串的新增方法</h2> <div class="language- extra-class"><pre><code>- String.fromCodePoint() 识别大于0xFFFF字符
+- String.raw() 返回一个斜杠(斜杠前面再加一个斜杠)
+- codePointAt() 正确返回UTF-16字符
+- includes() 返回布尔值,表示是否找到了参数字符串
+- startsWith() 返回布尔值,表示参数字符串是否在原字符串的头部
+- endsWith() 返回布尔值,表示参数字符串是否在原字符串的尾部
+- repeat() 返回一个新字符串,表示将原字符串重复n次
+- padStart(参数1,参数2) 补全字符串,参数1为长度,参数2为用什么字符串补全
+- trimStart() 删除头部空格
+- trimEnd() 删除尾部空格
+- matchAll() 是否匹配该正则表达式
+- repeatAll(寻找项,替换项) 替换所有满足的字符
+</code></pre></div><h2 id="_6-正则的拓展"><a href="#_6-正则的拓展" class="header-anchor">#</a> 6.正则的拓展</h2> <div class="language- extra-class"><pre><code>- 允许在构造函数中共同使用正则表达式和制定修饰符
+    - new RegExP(/abc/ig,'i').flags
+        - 后面的'i'会覆盖前面的修饰符
+- u修饰符 =&gt; Unicode模式 =&gt; 处理大于\uFFFF字符
+    - var s = '𠮷';
+      /^.$/.test(s) // false
+      /^.$/u.test(s) // true
+    - 判断是否添加u修饰符
+        - .Unicode  // true
+- y修饰符 =&gt; 与g修饰符类似 =&gt; 全局匹配
+    - 判断是否添加y修饰符
+        - .sticky  // true
+- flags属性
+    - 返回正则表达式的修饰符
+</code></pre></div><h2 id="_7-数值的拓展"><a href="#_7-数值的拓展" class="header-anchor">#</a> 7.数值的拓展</h2> <div class="language- extra-class"><pre><code>- 7.1引入二进制和八进制
+    - 0b111110111 === 503 // true
+      0o767 === 503 // true
+- 7.2数值分隔符
+    - 使用下划线_作为分隔符
+    - 1000 === 1_000
+    - Number('123_456') // NaN
+      parseInt('123_456') // 123
+- 7.3Number.isFinite(),Number.isNaN()
+    - Number.isFinite() 判断是否有限
+    - Number.isNaN()    判断是否不是一个数字
+        - 如果参数类型不是NaN，Number.isNaN一律返回false
+    - Number.parseInt(),Number.parseFloat()
+        - 和ES5作用一样,减少全局性方法,移植到Number对象上
+    - Number.isInterger() 
+        - 判断一个数是否为整数
+        - Number.isInteger('15') // false
+    - Number.EPSILON()
+        - 设置能够接受的误差范围
+        - Number.EPSILON * Math.pow(2,2)
+            - 5.551115123125783e-17 &lt; Number.EPSILON * Math.pow(2, 2) // true
+    - Number.isSafeInteger()
+        - 精确表示-2^53到2^53之间
+- 7.4 Math对象拓展
+    - Math.trunc()
+        - 去掉小数部分
+    - Math.sign()
+        - 判断是正数、负数还是零
+        - 返回值
+            - 参数为正数，返回+1；
+              参数为负数，返回-1；
+              参数为 0，返回0；
+              参数为-0，返回-0;
+              其他值，返回NaN。
+    - Math.cbrt()
+        - 计算一个数的立方根 开立方根
+        - 会将字符串转换为Number
+    - Math.hypot()
+        - 返回所有参数的平方和的平方根
+        - Math.hypot(3, 4);  // 5
+- 7.5 BigInt数据类型
+    - 第8种数据类型
+    - 后缀必须加n
+    -  let num = 231321564n;
+       let num1 = 1234651321n;
+       console.log(num * num1);  // 可以确保精度
+       console.log(Number(num) * Number(num1));
+</code></pre></div><h2 id="_8-函数的拓展"><a href="#_8-函数的拓展" class="header-anchor">#</a> 8.函数的拓展</h2> <div class="language- extra-class"><pre><code>- 8.1 函数参数默认值
+    - ES6之前不能直接设置函数参数默认值
+    - ES6
+        - function fn(x,y = 'World'){
+          ...
+          }
+    - 函数的length属性
+        - 表示函数应该传的参数个数
+          - let length = (function (x, y, z = 5) { }).length
+            console.log(length); // 2 
+    - 作用域
+        - let foo = 'outer';
+          function bar(func =() =&gt; foo{
+            let foo = 'inner';
+            console.log(func());
+          })
+          bar(); // outer
+- 8.2 rest参数
+    - 该参数就是一个数组
+    - 代替arguments
+    - 不被length属性所包括
+- 8.3 严格模式
+    - 不能在函数参数使用了默认值、解构赋值、拓展运算符时将函数设为严格模式
+- 8.4 name属性
+    - 返回函数名
+        - const bar = function baz(){};
+          console.log(bar.name) // baz
+    - 构造函数
+        - (new Function).name //'anonymous'
+- 8.5 箭头函数
+    - let sum = (sum1,sum2) =&gt; sum1 + sum2;
+    - 箭头函数返回如果是一个对象,必须加上括号
+        - let getTempItem = id =&gt; ({ id: id, name: &quot;Temp&quot; });
+    - [1,2,3].map(x =&gt; x*x)
+    - 箭头函数的this指向问题
+    箭头函数没有自己的this,所以不能使用call、apply、bind来改变this指向
+    function foo() {
+        return () =&gt; {
+            return () =&gt; {
+                return () =&gt; {
+                    console.log('id:', this.id);
+                    };
+                };
+            };
+        }  
+    var f = foo.call({id: 1});           
+    var t1 = f.call({id: 2})()(); // id: 1
+    var t2 = f().call({id: 3})(); // id: 1
+    var t3 = f()().call({id: 4}); // id: 1
+    - 注意箭头函数的不可使用场景
+        - 定义一个对象时,不要给对象添加箭头函数
+        - 动态绑定this时,不要使用箭头函数
+        - 如果需要大量读写数据,不要使用箭头函数
+- 8.6 嵌套的箭头函数
+    - function insert(value){
+        return {into:function(array){
+            return {after:function(aftervalue){
+                array.splice(array.indexOf(aftervalue)+1,0,value);
+            }}
+        }}
+    }
+    insert(2).into([1,3]).after(1); // [1,2,3]
+
+    - 使用箭头函数
+     let result = (value) =&gt; ({
+        into: (array) =&gt; ({
+            after: (aftervalue) =&gt; {
+                array.splice(array.indexOf(aftervalue) + 1, 0, value);
+                return array;
+            }
+        })
+    })
+    console.log(result(2).into([1, 3]).after(1)); // [1,2,3]
+- 8.7 尾调用优化 =&gt; 注意只能在ES6严格模式下使用
+    - 尾调用是指一个函数中最后调用一个函数
+    - function f(x){
+        return g(x);
+    }
+    - 尾调用不一定出现在函数尾部,只要是最后一步操作即可
+    function f(x){
+        if(x&gt;0){
+            return m(x);
+        }
+        return n(x)
+    }
+    - 尾调用优化
+    function f(x) {
+        let m = 1;
+        let n = 2;
+        return g(m+n);
+    }
+    =&gt; 等于
+    function f(x){
+        return g(3);
+    }
+    =&gt; 等于
+    g(3);
+    - 尾调用优化 =&gt; 不常用
+    由于以上代码只利用到内层函数的调用帧
+    所以只需要保留内层函数的调用帧
+    - 尾递归
+    函数内部调用自身
+    n  total
+    5   1
+    4   5
+    3   20
+    2   60
+    1   120
+    尾递归阶乘
+    function fn(n, total) {
+        if (n === 1) {
+            return total;
+        }
+        return fn(n - 1, n * total);
+    }
+    console.log(fn(5, 1));
+    尾调用斐波那契数列
+     function fn(n, num1 = 1, num2 = 1) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        return fn(n - 1, num1, num1 + num2)
+    }
+    - 尾调用不会导致栈溢出问题,从而节省内存空间
+    - 尾调用改写:
+    function tailFactorial(n, total) {
+        if (n === 1) return total;
+        return tailFactorial(n - 1, n * total);
+    }
+    在该函数外再设置一个函数,可以代替参数1的效果
+    function factorial(n) {
+        return tailFactorial(n, 1);
+    }
+    factorial(5) // 120
+- 8.8 函数参数的尾逗号
+    function clownsEverywhere(
+        param1,
+        param2,
+    ) { /* ... */ }
+    
+    clownsEverywhere(
+        'foo',
+        'bar',
+    );
+    即可以给函数增加尾参数
+- 8.9 Function.prototype.toString()
+    toString()方法返回函数代码本身,但会包含注释
+</code></pre></div><h2 id="_9-数组的拓展"><a href="#_9-数组的拓展" class="header-anchor">#</a> 9.数组的拓展</h2> <div class="language- extra-class"><pre><code>- 9.1 拓展元素符 =&gt; ...[1,2,3,4,5] 转换为一个参数序列
+    const arr = [1,2,3,4,5]
+    console.log(...arr); // 1 2 3 4 5
+    这种是转换为指定的数据类型
+    console.log([...arr]); // [1,2,3,4,5]
+    console.log({...arr}); // {1,2,3,4,5}
+- 9.2 替代函数的apply()方法
+    const arr = [1,2,3,4,5];
+    const arr1 = [6,7,8,9,10];
+    console.log(Math.max(...arr));
+- 9.3 拓展运算符的应用
+    - 9.3.1 复制数组
+        - const arr = [1,2,3];
+          原数组使用拓展字符串的数组形式
+          const NewArr1 = [...arr];
+          console.log(NewArr1);  
+          新数组使用拓展字符串的数组形式
+          const [...NewArr2] = arr;
+          console.log(NewArr2);
+    - 9.3.2 合并数组 
+        - 注意该方法是浅拷贝,都是对源数据的引用
+          const arr1 = [1, 2, 3];
+          const arr2 = [4, 5, 6];
+          const arr3 = [7, 8, 9];
+          console.log([...arr1,...arr2,...arr3]);
+    - 9.3.3 与解构赋值结合
+        - 注意必须将拓展运算符放在最后
+        - const [first, ...second] = [1, 2, 3, 4, 5];
+    - 9.3.4 字符串
+        - 9.3.4.1 字符串转数组
+        - let str = [...'Hello']
+          console.log(str); // [ &quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot; ]
+    - 9.3.5 iterator接口
+        - Number.prototype[Symbol.iterator] = function*() {
+          let i = 0;
+          let num = this.valueOf();
+          while (i &lt; num) {
+              yield i++;
+              }
+          }
+          上面定义了Number类型的一个iterator的迭代接口
+          console.log([...5]) // [0, 1, 2, 3, 4]
+    - 9.3.6 Map和set结构,Generator函数
+        - Map 
+          - let map = new Map();
+            map.set(1, 'one')
+            map.set(2, 'two')
+            map.set(3, 'three')
+            console.log([...map.keys()]); // [1,2,3]
+        - Generator
+          - const go = function* () {
+                yield 1;
+                yield 2;
+                yield 3;
+            }
+            console.log([...go()]); // [1,2,3]
+- 9.4 Array.from()
+    - 9.4.1 可以将伪数组或者可迭代对象转换为数组
+        - 伪数组
+            let divs = document.querySelectorAll('div');
+            console.log(Array.from(divs));
+        - 可迭代对象 Array、String、NodeList、伪数组、map、set、Arguments
+            let map = new Map();
+            map.set(1, 'one')
+            map.set(2, 'two')
+            map.set(3, 'three')
+            console.log(Array.from(map));
+    - 9.4.2 参入第二参数 类似map 数组遍历
+        - Array.from([1,2,3],(ele)=&gt;console.log(ele))
+- 9.5 Array.of() 可以替代Array() 或者new Array()
+    - 9.5.1 将一组值转换位数组
+        - console.log(Array.of(1,2,3)); // [1,2,3]
+- 9.6 copyWithin()
+    -  console.log([0, 0, 0, 1, 2, 3].copyWithin(1, 3, 5)); // [0,1,2,1,2,3]
+- 9.7 find()和findIndex()
+    - find() 返回第一个目标值的值
+        - console.log([1, 2, 3, 4, 5].find(n =&gt; n &gt; 4)); // 5
+    - findIndex() 返回第一个目标值的索引
+        - console.log([1, 2, 3, 4, 5].findIndex(n =&gt; n &gt; 4)); // 5
+- 9.8 fill() 初始化数组值
+    -  console.log(Array.of('a', '4', '5').fill(10));
+- 9.9 entries(),keys()和values()
+    - 都可以使用for of遍历 =&gt; 因为具有iterator迭代器接口
+    - keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。
+- 9.10 includes()  比indexOf() 更加严格不会误判NaN
+    - 是否包含某个值,返回布尔值
+    - [1, 2, 3].includes(2)   // true
+- 9.11 flat(),flatMap() 
+    - flat() 扁平化
+        - console.log([1, [2, [3, 4, [5, [6, [7], [8, 9]]], [10]]]].flat(Infinity));
+        // [1,2,3,4,5,6,7,8,9,10];
+    - flatMap() 先对数组所有元素执行一次函数,
+                再进行flat()
+    - [2, 3, 4].flatMap((x) =&gt; [x, x * 2])
+    // [2, 4, 3, 6, 4, 8]
+- 9.12 at() 负索引
+    - console.log([1, 2, 3, 4, 5].at(-2)); // 4
+</code></pre></div><h2 id="_10-对象的拓展"><a href="#_10-对象的拓展" class="header-anchor">#</a> 10.对象的拓展</h2> <div class="language- extra-class"><pre><code>- 10.1 属性的简洁表达式
+    - function f(x, y) {
+        return { x: x, y: y };
+    }
+    console.log(f(1, 2)); // {x:1,y:2}
+- 10.2 属性名表达式
+    - const obj = new Object();
+      obj['a' + 'bc'] = 123;
+      console.log(obj.abc); // 123
+- 10.3 方法的name属性
+    - const obj = {
+        sayhi() {
+        console.log('hello!');
+        }
+    }
+    console.log(obj.sayhi.name); // sayhi
+    - const k1 = Symbol('I am k1');
+      const k2 = Symbol('I am k2');
+      let obj = {
+          [{'name3':'kz3'}]:'kz3',
+          [name]:'kz1',
+          name: 'kz',
+          [k1]() { },
+          [k2]() { }
+      }
+      console.log(obj[k1].name);
+      console.log(obj.name);
+      console.log(obj[name]);
+      console.log(obj[{'name3':'kz3'}]);
+- 10.4 属性的可枚举性和遍历
+    - 10.4.1 可枚举性
+        - 对象每个属性都有一个描述对象,用来控制该属性的行为
+        - object.getOwnPropertyDescriptor方法可以获取该属性的描述对象
+        - 注意以后少用for in来遍历,而用object.keys()代替
+    - 10.4.2 属性的遍历
+        - ES6的遍历对象方法
+            - for...in    
+                - 遍历可枚举属性(不含Symbol属性)
+            - Object.keys(obj)
+                - 遍历自身可枚举属性的键名(不含Symbol属性),返回一个数组
+            - Object.getOwnPropertyNames(obj)
+                - 遍历自身所有属性的键名(包括不可枚举属性)
+            - Object.getOwnPropertySymbols(obj)
+                - 返回一个数组，包含对象自身的所有 Symbol 属性的键名
+            - Reflect.ownKeys(obj)
+                - 返回一个数组，包含对象自身的（不含继承的）所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举
+    - 10.4.3 super关键字
+        - class Father {
+            constructor(words) {
+                console.log(words);
+                this.word = words
+            }
+            words() {
+                console.log('I am words');
+            }
+          }
+          class Son extends Father {
+              constructor(words) {
+                  super(words)
+              }
+              sayhi() {
+                  console.log('hi');
+              }
+          }
+          let son = new Son('我是根据ES6class继承而来')
+          son.sayhi()
+          son.words()
+          console.log(son.word);
+    - 10.4.4 对象的拓展运算符
+        - 10.4.4.1 解构赋值
+        let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 }
+        // x=1,y=2,z = {a: 3, b: 4 }
+        - 10.4.4.2 拓展运算法
+        const a = {
+            a: 3,
+            b: 4
+        }
+        const { ...c } = a
+        console.log(c);
+</code></pre></div><h2 id="_11-对象的新增方法"><a href="#_11-对象的新增方法" class="header-anchor">#</a> 11.对象的新增方法</h2> <div class="language- extra-class"><pre><code>- 11.1 Object.is() 
+    - ES5中的比较两值是否相等
+        == 或者 === 
+        == 会自动转换数据类型
+        === NaN不等于自身
+    - 案例:  =&gt; 是通过二进制来比较
+    console.log(Object.is('foo', 'foo')); // true
+    console.log(Object.is({}, {})); // false
+    console.log(Object.is(NaN, NaN)); // true
+- 11.2 Object.assign(target, source1, source2...)
+    - 复制可枚举的对象属性到指定的目标对象
+   
+    - 案例: =&gt; 注意这里的a,b对象不相同
+    let a = {
+        name: '123456'
+    }
+    let b = {}
+    Object.assign(b, a)
+    console.log(b); // {name:'123456'}
+    - 注意:
+        - 11.2.1 该方法是浅拷贝
+            - 浅拷贝:如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
+            - 案例:
+                let a = {
+                name: '123456',
+                sex: {
+                    man: '男',
+                    woman: '女'
+                }
+                }
+                let b = {}
+                Object.assign(b, a)
+                a.sex.man = 'nan'
+                // b.name = '789'
+                console.log(b);
+                console.log(a);
+        - 11.2.2 同名属性的替换 
+            - 如果对象中有同名属性,会覆盖整个对象
+            - 案例:
+                const target = { a: { b: 'c', d: 'e' } }
+                const source = { a: { b: 'hello' } }
+                Object.assign(target, source)
+                // { a: { b: 'hello' } }
+        - 11.2.3 数组的处理
+            - console.log(Object.assign([1, 2, 3], [4, 5])); // [4,5,3]
+        - 11.2.4 取值函数的处理
+            - 先返回函数的值,再赋值给函数
+            const source = {
+                get foo() {
+                    return 1
+                }
+            }
+            const target = {};
+            console.log(Object.assign(target, source)); // {foo:1}
+        - 11.2.5 用途
+            - 11.2.5.1 为对象添加属性
+                - 使用Object.assign(this,{x,y})给类对象添加x和y属性
+                - 案例:
+                class person {
+                    constructor(x, y) {
+                        Object.assign(this, { x: '1', y: '2' })
+                    }
+                }
+                let Person = new person();
+                console.log(Person.x);  // 1
+                console.log(Person.y);  // 2
+            - 11.2.5.2 为对象添加方法 
+                - 使用 
+                    Object.assign(a.prototype, {
+                        method1(x) {
+                            ...
+                        },
+                        method2(y) {
+                            ...
+                        }
+                    })
+                    注意这里的a是一个类,然而类的本质是一个函数,所以如果a函数也是可以的
+                - 案例:
+                    class a {
+
+                    }
+                    Object.assign(a.prototype, {
+                        method1(x) {
+                            console.log(x);
+                        },
+                        method2(y) {
+                            console.log(y);
+                        }
+                    })
+                    a.prototype.method1(5)
+                    a.prototype.method2(10)
+            - 11.2.5.3 克隆对象
+                - 由于Object.assign()是浅拷贝,所以不能继承原始对象的值
+                - 可以同时使用Object.getPrototypeOf()和Object.create()进行原型链克隆
+                - 案例:
+                    function clone(origin) {
+                        // 得到origin的原型
+                        let originProto = Object.getPrototypeOf(origin);
+                        return Object.assign(Object.create(originProto), origin)
+                    }  
+            - 11.2.5.4 合并多个对象
+                - 将多个对象合并到某个对象
+                - 案例:
+                    let a = {
+                        name: 'kz'
+                    }
+                    let b = {
+                        sex: '男'
+                    }
+                    let c = {
+                        age: '20'
+                    }
+                    const result = (...source) =&gt; Object.assign({}, a, b, c)
+                    console.log(result());
+            - 11.2.5.5 为属性指定默认值
+                - 案例:
+                const DEFAULTS = {
+                    logLevel: 0,
+                    outputFormat: 'html'
+                };
+                function processContent(options) {
+                  options = Object.assign({}, DEFAULTS, options);
+                  console.log(options);
+                  // ...
+                }
+- 11.3 Object.getOwnPropertyDescriptors()
+    - 得到甩多有关其对象的值
+      什么value啊,wirtable等值都有 
+    - 案例:
+    function getOwnPropertyDescriptors(obj) {
+        const result = {};
+        for (const iterator of Reflect.ownKeys(obj)) {
+            result[iterator] = Object.getOwnPropertyDescriptor(obj, iterator)
+        }
+        return result
+    }
+    let obj = {
+        name: 'kz',
+        sex: 'nan',
+        age: '20'
+    }
+    console.log(getOwnPropertyDescriptors(obj));
+- 11.4 __proto__属性,Object.setPrototypeOf(),Object.getPrototypeOf()
+    - 意思在一个对象的原型上添加属性或者方法
+    - 注意不需要用参数接收,会修改原有属性
+    - Object.setProtptypeOf() 写操作  =&gt; 设置一个对象的原型对象
+        - 该方法与__proto__相同
+        - 案例:
+            let a = {
+                name: 'kz'
+            }
+            let obj = {}
+            Object.setPrototypeOf(a, obj);
+            // 通过此方法设置a的原型对象属性或方法
+            obj.sex = '男';
+            console.log(a);
+    - Object.getPrototypeOf() 读一个对象的原型对象
+        - 案例:
+            console.log(Object.getPrototypeOf(a, obj.sex)); // sex:'男'
+    - Object.create()       生成一个对象的原型对象
+        - 案例:
+            Object.create(obj)
+            obj.age = '20';
+            console.log(a);
+- 11.5 Object.keys()、Object.values()、Object.entries()
+    - Object.keys()    =&gt; 键名
+    - Object.values()  =&gt; 键值
+    - Object.entries() =&gt; 键值对
+    - 案例:
+        // 使用解构赋值
+        const { keys, values, entries } = Object;
+        let obj = {
+            a: 1,
+            b: 2,
+            c: 3
+        }
+        // Object.keys(obj) for...of遍历键名
+        for (const iterator of keys(obj)) {
+            console.log(iterator);
+        }
+        // Object.values(obj) for...of遍历键值
+        for (const iterator of values(obj)) {
+            console.log(iterator);
+        }
+        // Object.entries(obj) for...of遍历键值对
+        for (const iterator of entries(obj)) {
+            console.log(iterator);
+        }
+- 11.6 Object.fromEntries()  =&gt; 数组转对象,就是Object.entries()的逆操作
+    - 案例:
+        console.log(Object.fromEntries([
+            ['foo', '1'],
+            ['foo2', '2']
+        ])); // {foo: '1', foo2: '2'}
+</code></pre></div><h2 id="_12-运算符的拓展"><a href="#_12-运算符的拓展" class="header-anchor">#</a> 12.运算符的拓展</h2> <div class="language- extra-class"><pre><code>- 12.1 指数运算符   
+    - 新增 ** 运算 =&gt; 从右到左进行次方运算
+    - 案例12.1.1:
+      console.log(2 ** (3 ** 2)); //512
+    - 案例12.1.2: =&gt; 多了一个变量接收
+      let a = 2;
+      a **= 3;
+      console.log(a);
+- 12.2 链判断运算符
+    - ?.  =&gt; 新增判断运算符
+    - a?.b
+      // 等同于
+      a == null ? undefined : a.b
+    - 案例12.2.1
+      const firstName = message?.body?.user?.firstName || 'default';
+    - 案例12.2.2
+      if (myForm.checkValidity?.() === false) {
+        // 表单校验失败
+        return;
+      }
+      理解:如果前面有定义,就调用自身;没有定义就返回undefined
+- 12.3 Null判断运算符
+    - ??  =&gt; 类似 ||
+    - 注意只有当左侧为null或undefined时,才返回右侧值
+    - 案例:配合?.使用
+      const animationDuration = response.settings?.animationDuration ?? 300;
+      如果response.settings是null或undefined，或者response.settings.animationDuration是null或undefined，就会返回默认值300
+- 12.4 逻辑赋值运算符
+    - 12.4.1 或赋值运算符
+      x ||= y
+      // 等同于
+      x || (x = y)
+    - 12.4.2 与赋值运算符
+      x &amp;&amp;= y
+      // 等同于
+      x &amp;&amp; (x = y)
+    - 12.4.3 Null赋值运算符
+      x ??= y
+      // 等同于
+      x ?? (x = y)
+</code></pre></div><h2 id="_13-symbol"><a href="#_13-symbol" class="header-anchor">#</a> 13.Symbol</h2> <div class="language- extra-class"><pre><code>- 解决对象属性名重复的问题
+- 通过Symbol()函数生成
+- 属于js数据类型之一
+- 13.1 概述
+    - 13.1.1 
+        - 不能使用new关键字
+        - 接受一个字符串作为参数来修饰该Symbol实例
+        - 不可以比较与加减
+    - 13.1.2
+        - 如果参数是一个对象,就会自动调用toString()方法
+        - 可以转换为布尔值,不能转换为数值
+            - 案例:
+              let sym = Symbol();
+              console.log(Boolean(sym)); // true
+- 13.2 Symbol.prototype.description
+    - 作用:输出修饰Symbol类型的描述
+    - 案例:
+        let sym = Symbol('foo');
+        console.log(sym.description); // foo
+- 13.3 作为属性名的Symbol
+    - 作用:Symbol可以作为对象的属性名,做到不重复
+    - 案例:
+        - 第一种写法
+        let sym = Symbol();
+        let a = {};
+        a[sym] = 'Hello';
+        - 第二种写法
+        let a = {
+            [sym]: 'Hello'
+        }
+        - 第三种写法
+        let a = {};
+        Object.defineProperty(a, sym, { value: 'Hello' });
+        console.log(a);
+    - 注意:Symbol作为对象属性时,不能使用点运算符
+          只能通过[]来调用该Symbol属性
+    - 案例:
+        let sym = Symbol('foo')
+        let obj = {
+            [sym]() {
+                console.log('123');
+            }
+        }
+        console.log(obj[sym].name);
+- 13.4 属性名的遍历
+    - Object.getOwnPropertySymbols()方法
+    - 遍历对象中的Symbol值
+    - 案例:
+        let a = Symbol('a');
+        let b = Symbol('b');
+        let obj = {};
+        obj[a] = 'Hello';
+        obj[b] = 'World';
+
+        console.log(Object.getOwnPropertySymbols(obj)); 
+        // 0: Symbol(a)
+        // 1: Symbol(b)
+- 13.5 Symbol.for() Symbol.keyFor()
+    - 13.5.1 Symbol.for()
+        - 作用:接收一个字符串,查找是否有以该字符串为描述的Symbol值,
+              如果有就返回该值,没有就创建一个以该字符串为描述的Symbol值
+        - 案例:
+            let s1 = Symbol.for('foo');
+            let s2 = Symbol.for('foo');
+            console.log(s1 === s2);  // true
+        - 注意与Symbol()的区别:
+            - Symbol.for()创建的值会相等
+            - Symbol()创建的值不会相等
+- 13.6 实例:模块的Singleton模式 =&gt;单例模式(创建类身上的方法返回自身)
+    - 理解:
+    在node中引入模块时,可以使用Symbol.for()来创建
+- 13.7 内置的Symbol值
+    - 13.7.1 Symbol.hasInstance属性
+        - 当其他对象调用instanceof判断是否为该对象时,会调用该方法
+        - 案例:
+        const Even = {
+          [Symbol.hasInstance](obj) {
+            return Number(obj) % 2 === 0;
+          }
+        };
+        1 instanceof Even // false
+        2 instanceof Even // true
+        12345 instanceof Even // false
+    - 13.7.2 Symbol.isConcatSpreadable
+        - 当数组使用concat方法时,使用该方法设置是否可以展开
+        - 案例:
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        arr2[Symbol.isConcatSpreadable] = false // 设置arr2不能被展开
+        let result = arr1.concat(arr2);
+        console.log(result);  // [1,2,3,[4,5,6]]
+    - 13.7.3 Symbol.species 
+        - 在类继承中使用该方法,创建实例的对象将使用这个属性的返回的函数作为构造函数
+        - 案例:
+        class MyArray extends Array {
+        static get [Symbol.species]() {
+                return Array;
+            }
+        }
+        const a = new MyArray();
+        const b = a.map(x =&gt; x);
+        console.log(b instanceof MyArray); // false
+        console.log(b instanceof Array);  // true
+    - 13.7.4 Symbol.match
+        - 当使用str.match()时,如果属性存在,会调用它,返回该方法的返回值
+        - 案例:
+        class MyMatcher {
+            [Symbol.match](string) {
+                return 'hello world'.indexOf(string);
+            }
+        }
+        console.log('e'.match(new MyMatcher())); // 1
+    - 13.7.5 Symbol.replace
+        - 当该对象被String.prototype.replace方法调用时，会返回该方法的返回值。
+        - 案例:
+        const x = {};
+        x[Symbol.replace] = (...s) =&gt; console.log(s); 
+        'Hello'.replace(x, 'World'); // [&quot;Hello&quot;, &quot;World&quot;]
+    - 13.7.6 Symbol.search
+        - 当该对象被String.prototype.search方法调用时，会返回该方法的返回值。
+        - 案例:
+        class MySearch {
+            constructor(value) {
+              this.value = value;
+            }
+            [Symbol.search](string) {
+              return string.indexOf(this.value);
+            }
+        }
+        'foobar'.search(new MySearch('foo')) // 0
+    - 13.7.7 Symbol.split
+        - 当该对象被String.prototype.split方法调用时，会返回该方法的返回值。
+        - 案例:
+        class MySplitter {
+          constructor(value) {
+            this.value = value;
+          }
+          [Symbol.split](string) {
+            let index = string.indexOf(this.value);
+            if (index === -1) {
+              return string;
+            }
+            return [
+              string.substr(0, index),
+              string.substr(index + this.value.length)
+            ];
+          }
+        }
+
+        'foobar'.split(new MySplitter('foo'))
+        // ['', 'bar']
+
+        'foobar'.split(new MySplitter('bar'))
+        // ['foo', '']
+
+        'foobar'.split(new MySplitter('baz'))
+        // 'foobar'
+    - 13.7.8 Symbol.iterator
+        - 对象的Symbol.iterator属性，指向该对象的默认遍历器方法。
+        - 案例:
+        class Collection {
+          *[Symbol.iterator]() {
+            let i = 0;
+            while(this[i] !== undefined) {
+              yield this[i];
+              ++i;
+            }
+          }
+        }
+        let myCollection = new Collection();
+        myCollection[0] = 1;
+        myCollection[1] = 2;
+        for(let value of myCollection) {
+          console.log(value);
+        }
+        // 1
+        // 2
+</code></pre></div><h2 id="_14-proxy"><a href="#_14-proxy" class="header-anchor">#</a> 14 Proxy</h2> <div class="language- extra-class"><pre><code>    - 代理器
+    - 调用proxy下的属性或方法必须经过此机制
+        - 参数
+            - 目标对象
+            - 属性名
+            - 属性值
+    - let proxy = new Proxy({}, {
+        get: function (target, proxyKey) {
+            console.log('get successful');
+        },
+        set: function (target, proxyKey) {
+            console.log('set successful');
+        }
+    })
+    proxy.name      // get successful
+    proxy.name = 35 // set successful
+    - get() 拦截某个属性的读取操作
+        let person = {
+            name: '康振'
+        }
+        let proxy = new Proxy(person, {
+            get(person, attribute) {
+                if (attribute in person) {
+                    return person[attribute]
+                } else {
+                    throw new Error('传入的对象没有该属性')
+                }
+            }
+        })
+        console.log(proxy.name);
+        console.log(proxy.age);
+    - set() 拦截某个属性的赋值操作
+        - 参数
+            - 目标对象
+            - 属性名
+            - 属性值
+            - proxy实例(可选)
+        - 注意
+            - 严格模式下的set必须返回true,不然会报错
+        let validator = {
+        set: function (obj, prop, value) {
+            if (prop === 'age') {
+                if (!Number.isInteger(value)) {
+                    throw new TypeError('The age is not an integer');
+                }
+                if (value &gt; 200) {
+                    throw new RangeError('The age seems invalid');
+                }
+            }
+            // 对于满足条件的 age 属性以及其他属性，直接保存
+            obj[prop] = value;
+            return true;
+            }
+        };  
+    
+        let person = new Proxy({}, validator);
+    
+        person.age = 100;
+    
+        person.age // 100
+        person.age = 'young' // 报错
+        person.age = 300 // 报错
+    - vue数据代理原生JS
+        const handler = {
+            get(target, key) {
+                invariant(key, 'get');
+                return target[key]
+            },
+            set(target, key, value) {
+                invariant(key, 'set');
+                target[key] = value;
+                return true;
+            }
+        };
+        function invariant(key, action) {
+            // 不能修改以_开头的属性或方法
+            if (key[0] === '_') {
+                throw new Error(`Invalid attempt to ${action} private &quot;${key}&quot; property`)
+            }
+        }
+        const target = {};
+        const proxy = new Proxy(target, handler);
+        // proxy._data  报错
+        proxy.name
+        proxy.name = 5
+        console.log(proxy.name);
+    - apply()
+        - 拦截函数调用、call和apply操作
+        - 参数
+            - 目标对象
+            - 目标对象的上下文对象（this）
+            - 目标对象的参数数组。
+        - 案例
+        let target = function () {
+            return 'I am the target'
+        }
+        let handler = {
+            apply: function () {
+                return 'I am the proxy'
+            }
+        }
+        let p = new Proxy(target, handler)
+        console.log(p());  // I am the proxy
+    - has()
+        - 判断对象是否含有该属性
+        - 案例
+        let handler = {
+            has(target, key) {
+                if (key[0] === '_') {
+                    return false
+                }
+                return key in target
+            }
+        }
+        let target = { _proxy: 'foo', proxy: 'foo' }
+        let proxy = new Proxy(target, handler);
+        console.log('_proxy' in proxy); // false
+    - construct()
+        - 拦截new命令
+        - 目标对象是一个函数
+        - 必须返回一个对象
+        - 案例
+        const p = new Proxy(function () { }, {
+            construct: function (target, args) {
+                console.log('called:' + args.join(','));
+                return { value: args[0] * 10 }
+            }
+        })
+        console.log((new p(1)).value);
+    - 其他
+        - deleteProperty()           拦截delete操作
+        - defineProperty()           拦截Object.defineProperty()操作
+        - getOwnPropertyDescriptor() 拦截Object.getOwnPropertyDescriptor()
+        - getPrototypeOf()           拦截获取对象原型 
+        - isExtensible()             拦截Object.isExtensible()操作
+        - ownKeys()                  拦截对象自身属性的读取操作
+        - preventExtensions()        拦截Object.preventExtensions()
+        - setPrototypeOf()           拦截Object.setPrototypeOf()方法
+        - Proxy.revocable()          返回一个可取消的 Proxy 实例
+        - this问题
+            - proxy代理后的this会指向Proxy,而不是目标对象
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_1-let和const" class="sidebar-link reco-side-_1-let和const" data-v-cb1513f6>1.let和const</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_2-es6声明变量的六种方法" class="sidebar-link reco-side-_2-es6声明变量的六种方法" data-v-cb1513f6>2.ES6声明变量的六种方法</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_3-变量的解构赋值" class="sidebar-link reco-side-_3-变量的解构赋值" data-v-cb1513f6>3.变量的解构赋值</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_4-字符串的拓展" class="sidebar-link reco-side-_4-字符串的拓展" data-v-cb1513f6>4.字符串的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_5-字符串的新增方法" class="sidebar-link reco-side-_5-字符串的新增方法" data-v-cb1513f6>5.字符串的新增方法</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_6-正则的拓展" class="sidebar-link reco-side-_6-正则的拓展" data-v-cb1513f6>6.正则的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_7-数值的拓展" class="sidebar-link reco-side-_7-数值的拓展" data-v-cb1513f6>7.数值的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_8-函数的拓展" class="sidebar-link reco-side-_8-函数的拓展" data-v-cb1513f6>8.函数的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_9-数组的拓展" class="sidebar-link reco-side-_9-数组的拓展" data-v-cb1513f6>9.数组的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_10-对象的拓展" class="sidebar-link reco-side-_10-对象的拓展" data-v-cb1513f6>10.对象的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_11-对象的新增方法" class="sidebar-link reco-side-_11-对象的新增方法" data-v-cb1513f6>11.对象的新增方法</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_12-运算符的拓展" class="sidebar-link reco-side-_12-运算符的拓展" data-v-cb1513f6>12.运算符的拓展</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_13-symbol" class="sidebar-link reco-side-_13-symbol" data-v-cb1513f6>13.Symbol</a></li><li class="level-2" data-v-cb1513f6><a href="/articles/ES6-11%E9%98%AE%E4%B8%80%E5%B3%B0.html#_14-proxy" class="sidebar-link reco-side-_14-proxy" data-v-cb1513f6>14 Proxy</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.a74b912a.js" defer></script><script src="/assets/js/3.ae9fb131.js" defer></script><script src="/assets/js/1.66efc5fd.js" defer></script><script src="/assets/js/15.0b1de5c4.js" defer></script><script src="/assets/js/9.82d2931b.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【正则 / RegExp】总结 | Kinsey&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <meta name="description" content="你我山巅自相逢，人去归来烟雨中。">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.bc16285c.css" as="style"><link rel="preload" href="/assets/js/app.a74b912a.js" as="script"><link rel="preload" href="/assets/js/3.ae9fb131.js" as="script"><link rel="preload" href="/assets/js/1.66efc5fd.js" as="script"><link rel="preload" href="/assets/js/33.0e2a4165.js" as="script"><link rel="preload" href="/assets/js/9.82d2931b.js" as="script"><link rel="prefetch" href="/assets/js/10.4eb33233.js"><link rel="prefetch" href="/assets/js/11.9b72f507.js"><link rel="prefetch" href="/assets/js/12.618ff3d9.js"><link rel="prefetch" href="/assets/js/13.93573bfe.js"><link rel="prefetch" href="/assets/js/14.624992d0.js"><link rel="prefetch" href="/assets/js/15.0b1de5c4.js"><link rel="prefetch" href="/assets/js/16.92a32d9f.js"><link rel="prefetch" href="/assets/js/17.acf4f275.js"><link rel="prefetch" href="/assets/js/18.2b876e8d.js"><link rel="prefetch" href="/assets/js/19.09990ed5.js"><link rel="prefetch" href="/assets/js/20.f1cdaf20.js"><link rel="prefetch" href="/assets/js/21.c90276d9.js"><link rel="prefetch" href="/assets/js/22.55d95159.js"><link rel="prefetch" href="/assets/js/23.995b2e4f.js"><link rel="prefetch" href="/assets/js/24.f540ab2c.js"><link rel="prefetch" href="/assets/js/25.14daf54a.js"><link rel="prefetch" href="/assets/js/26.d8b54a37.js"><link rel="prefetch" href="/assets/js/27.2e17fde9.js"><link rel="prefetch" href="/assets/js/28.0975ddd2.js"><link rel="prefetch" href="/assets/js/29.c228b119.js"><link rel="prefetch" href="/assets/js/30.373e7f8f.js"><link rel="prefetch" href="/assets/js/31.43f9423e.js"><link rel="prefetch" href="/assets/js/32.2b43a160.js"><link rel="prefetch" href="/assets/js/34.490c7eb0.js"><link rel="prefetch" href="/assets/js/4.ff175b66.js"><link rel="prefetch" href="/assets/js/5.8b13e0eb.js"><link rel="prefetch" href="/assets/js/6.0ab7c6d6.js"><link rel="prefetch" href="/assets/js/7.20122e24.js"><link rel="prefetch" href="/assets/js/8.ed730b48.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bc16285c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Kinsey's Blog</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>你我山巅自相逢，人去归来烟雨中。</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>谦逊</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Kinsey's Blog" class="logo"> <span class="site-name">Kinsey's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/中等算法/" class="nav-link"><i class="undefined"></i>
+  中等算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jQuery/" class="nav-link"><i class="undefined"></i>
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/手写/" class="nav-link"><i class="undefined"></i>
+  手写
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><img src="/person.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    谦逊
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>22</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>12</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/中等算法/" class="nav-link"><i class="undefined"></i>
+  中等算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jQuery/" class="nav-link"><i class="undefined"></i>
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/手写/" class="nav-link"><i class="undefined"></i>
+  手写
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>【正则 / RegExp】总结</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>谦逊</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">【正则 / RegExp】总结</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>谦逊</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>5/8/2022</span></i> <i class="iconfont reco-eye" data-v-f875f3fc><span id="/articles/%E6%AD%A3%E5%88%99.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-f875f3fc><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>正则</span></i></div></div> <div class="theme-reco-content content__default"><div class="language-javascript extra-class"><pre class="language-javascript"><code>   <span class="token comment">/* 正则表达式作用:
+    检查用户输入的格式是否符合预期
+    正则表达式用于定义一些字符串的规则
+    - 计算机可以根据正则表达式,来检查一个字符串是否符合规则
+    - 或者将字符串中符合规则的内容提取出来
+    创建正则表达式的对象
+    语法:var 变量 = new RegExp('正则表达式','匹配模式')
+    用来检查是否含有a  区别大小写
+    在构造函数中可以传递一个匹配模式作为第二个参数
+             可以是
+                 i 忽略大小写
+                 g 全局匹配模式
+   */</span>
+   <span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> reg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// object</span>
+   <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'Abc'</span><span class="token punctuation">;</span>
+   <span class="token comment">// 正则表达式的方法:</span>
+   <span class="token comment">// - test()</span>
+   <span class="token comment">// 使用这个方法可以用来检查一个字符串是否符合正则表达式的规则</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true 符合</span>
+
+   <span class="token comment">// 语法</span>
+   <span class="token comment">// 字面量创建:</span>
+   <span class="token comment">// var 变量 = /正则表达式/匹配模式</span>
+   <span class="token comment">// 字面量创建正则表达式更加简单 </span>
+   <span class="token comment">// 构造函数创建更加灵活 new RegExp()</span>
+   <span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">// 创建一个正则表达式,检测一个字符串中是否有a或b</span>
+   <span class="token comment">// 使用 | 表示或者的意思</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a|b</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'ac'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'bc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+   <span class="token comment">// 创建一个正则表达式检查一个字符是否有字母</span>
+   <span class="token comment">// [] 里的内容也表示或的关系</span>
+   <span class="token comment">// [ab] == a|b</span>
+   <span class="token comment">// [a-z]  任意小写字母 中间的-表示从什么到什么</span>
+   <span class="token comment">// [A-Z]  任意小写字母 </span>
+   <span class="token comment">// [A-z]  任意字母</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[a-z]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">// 创建一个正则表达式,检查一个字符串是否含有abc 或 adc 或aec</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a[bde]c</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'acc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+   <span class="token comment">// [^ ] 查找任何不在[]之间的字符</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[^ab]</span><span class="token regex-delimiter">/</span></span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+   <span class="token comment">// 利用正则表达式来拆分一个字符串</span>
+   <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'1a2b3c4d5e6f7'</span><span class="token punctuation">;</span>
+   <span class="token comment">// let result = str.split(/[0-9]/)</span>
+   <span class="token keyword">let</span> result <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[A-z]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span>  <span class="token comment">// 根据任意字母拆分</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">/* search() 可以搜索字符串中是否含有指定内容
+       类似indexOf() */</span>
+   str <span class="token operator">=</span> <span class="token string">'hello abc hello acc adc aec'</span><span class="token punctuation">;</span>
+   <span class="token comment">// 正则表达式不需要加引号</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a[b-e]c</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">/* match() 可以根据正则表达式,从一个字符串中将符合条件的内容提取出来
+       - 默认情况下match() 只会找到第一个而不会全部查找
+       - 需要设为g 全局匹配模式    
+       - 可以为一个正则表达式设置多个匹配模式
+   */</span>
+   str <span class="token operator">=</span> <span class="token string">'H Io adbKlTbK'</span><span class="token punctuation">;</span>
+   <span class="token keyword">var</span> a <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[A-Z]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">var</span> b <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[A-Z]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gi</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 忽略大小写</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">/*
+       replace() 可以根据正则表达式,替换指定内容
+       - 
+   */</span>
+   str <span class="token operator">=</span> <span class="token string">'1a2b3c4d5e6f7gsdasdADASD SDSA ASD SADsdasd231321'</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[A-z- ]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gi</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 将字母删除</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code>   <span class="token comment">/*
+       创建一个正则表达式检查一个字符串是否含有aaa
+   */</span>
+   <span class="token comment">/*
+      量词
+      - 通过量词可以设置一个内容出现的次数
+      - 量词只对前面一个内容起作用
+      - a{n}  a正好出现n次
+      - (ab){n}  ab正好出现n次
+      - a{m,n} 出现a m到n次
+      - a{m,} 出现a m次以上
+      - + 表示至少出现一次,相当于{1,}
+      - * 0个或多个,相当于{0,} 
+      - ? 0个或1个,相当于{0,1}
+  */</span>
+   <span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">aaa</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a{3}</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span> <span class="token comment">// 出现3次a</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'aaabbb'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(ab){3}</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span> <span class="token comment">// 出现3次ab</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'ababab'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">ab{3}c</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span> <span class="token comment">// 出现3次b</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abbbc111'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">ab{1,3}c</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span> <span class="token comment">// 出现1次到3次b</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abbc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a+</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'aaa'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a*</span><span class="token regex-delimiter">/</span></span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'aa'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a?c</span><span class="token regex-delimiter">/</span></span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'ac'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">/*
+       检查一个字符串是否以a开头
+       -  ^表示开头
+       -  $表示结尾
+   */</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^a</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span> <span class="token comment">// 匹配开头a</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">b$</span><span class="token regex-delimiter">/</span></span> <span class="token comment">// 匹配结尾b</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'addddb'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^a$</span><span class="token regex-delimiter">/</span></span> <span class="token comment">// </span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^a|a$</span><span class="token regex-delimiter">/</span></span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abbb'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^a</span><span class="token regex-delimiter">/</span></span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'aaa'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">/*
+       案例:创建一个正则表达式判断输入是否是一个合法手机号
+       手机号码规则:
+       - 1. 一共11位数
+       - 2. 第一位以1开头         ^1
+       - 3. 第二位3-9任意数字     [3-9]
+       - 4. 第三位以后9个任意数字  [0-9]{9}$
+       */</span>
+   <span class="token keyword">var</span> phoneStr <span class="token operator">=</span> <span class="token string">'19138564021'</span><span class="token punctuation">;</span>
+   <span class="token keyword">var</span> phoneReg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^1[3-9][0-9]{9}$</span><span class="token regex-delimiter">/</span></span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>phoneReg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>phoneStr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code>   <span class="token comment">/*
+       创建一个正则表达式检查是否含有 '.'
+       -   .表示任意字母
+       -   在正则表达式中使用\作为转义字符
+       -   用\.表示单纯的.
+       -   在字符串中一个\必须用\\表示,因为会把后面的字符转义
+   */</span>
+   <span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\\</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'\\\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'1\\'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'\\\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出\\</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'\\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出\</span>
+   <span class="token comment">/*
+       * \w
+         - 任意字母、数字、下划线 [A-z0-9_]
+       * \W
+         - 除了字母、数字、下划线 [^A-z0-9_]
+       * \d
+         - 任意数字[0-9]
+       * \D
+         - 除了数字[0-9]
+       * \s
+         - 空格
+       * \S
+         - 除了空格
+       * \b
+         - 单词边界
+       * \B
+         - 除了单词边界
+   */</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'asd123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\W</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\d</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\D</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">' 123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\S</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   <span class="token comment">/*
+       用正则表达式检查一个字符串中是否含有单词child
+   */</span>
+   <span class="token comment">//    </span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\bchild\b</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span> <span class="token comment">//查找单词的单词child</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'child person'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+   reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\Bchild\B</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'childs'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
+   <span class="token comment">/*
+       接受一个用户的输入
+       去除前后空格,保留用户输入之间的空格
+       - 1.以多个空格开头 ^\s*
+       - 2.以多个空格结尾 \s*$
+       - 3.全局匹配  g
+   */</span>
+   <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'       ad—_   123min         '</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\s+|\s+$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code>   <span class="token comment">/*
+       电子邮件
+       - hello.li@abc.com
+       格式:
+       - 1. 任意字母、数字、下划线    \w{3,}
+       - 2. .任意字母、数字、下划线(可有可无)  (\.\w+)*
+       - 3. @任意字母、数字        @[A-z0-9]+
+       - 4. .任意字母{2,5}       .[A-z]{2,5}
+       - 5. .任意字母{2,5}       .[A-z]{2,5}
+       */</span>
+   <span class="token keyword">var</span> emailReg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(\w{3,})(\.\w+)*@([A-z0-9])+((\.[A-z]{2,5}){1,2})$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+   <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'12311@163aad.com'</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>emailReg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-cb1513f6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.a74b912a.js" defer></script><script src="/assets/js/3.ae9fb131.js" defer></script><script src="/assets/js/1.66efc5fd.js" defer></script><script src="/assets/js/33.0e2a4165.js" defer></script><script src="/assets/js/9.82d2931b.js" defer></script>
+  </body>
+</html>
